@@ -1,7 +1,3 @@
-¡Hola! 🎉 Aquí tienes un **README** más dinámico y amigable para tus ejercicios de manejo de errores en Python. ¡Espero que te guste! 😄
-
----
-
 ## 📚 Descripción General
 
 Este README contiene las soluciones comentadas para los ejercicios de manejo de errores en Python. Cada sección aborda un tipo de excepción o constructo `try-except`, con ejemplos de código que **crean** y **corrigen** errores.
