@@ -1,187 +1,140 @@
-# pp_python_rosso
+¡Hola! 🎉 Aquí tienes un **README** más dinámico y amigable para tus ejercicios de manejo de errores en Python. ¡Espero que te guste! 😄
 
-# SOLUCIONES COMENTADAS DE TODOS LOS EJERCICIOS
+---
 
-# === 1_2_SyntaxError ===
-# 1. Crear el error:
-# Error forzado (no ejecutar este código):
-# def saludar()  
-#     print("Hola")
+## 📚 Descripción General
 
-# 2. Corregir el error:
-if True:
-    print("¡Funciona!")
+Este README contiene las soluciones comentadas para los ejercicios de manejo de errores en Python. Cada sección aborda un tipo de excepción o constructo `try-except`, con ejemplos de código que **crean** y **corrigen** errores.
 
-# === 3_4_NameError ===
-# 3. Crear el error:
-mensaje = "¡Hola, programador!"
-print(mensaje)
+---
 
-# 4. Corregir el error:
-contador = 10
-print(contador + contador)
+## 🛠️ Índice de Ejercicios
 
-# === 5_6_TypeError ===
-# 5. Crear el error:
-numero = 5
-otro_numero = 10
-resultado = numero + otro_numero
-print(resultado)
+1. **SyntaxError**
+2. **NameError**
+3. **TypeError**
+4. **ZeroDivisionError**
+5. **IndexError**
+6. **Bloques `try-except`** (ejercicios 11–20)
 
-# 6. Corregir el error:
-def duplicar(x):
-    return x * 2
+---
 
-print(len(duplicar("hola")))
+## 1. SyntaxError 🚨
 
-# === 7_8_ZeroDivisionError ===
-# 7. Crear el error:
-numeros = [10, 20, 0, 40]
-promedio = sum(numeros) / len(numeros)
-valor = promedio / numeros[2]
-print(valor)
+* **Creación del error**
 
-# 8. Corregir el error:
-def calcular_coeficiente(a, b):
-    return a / b
+  ```python
+  # def saludar()        # Falta dos puntos al definir la función
+  #     print("Hola")
+  ```
 
-print(calcular_coeficiente(100, 2))
+* **Corrección**
 
-# === 9_10_IndexError ===
-# 9. Crear el error:
-palabras = ["uno", "dos", "tres"]
-letra = palabras[1][5]
-print(letra)
+  ```python
+  if True:
+      print("¡Funciona!")  # ¡Éxito sin errores de sintaxis! ✅
+  ```
 
-# 10. Corregir el error:
-colores = ["rojo", "verde", "azul"]
-print(colores[0])
+---
 
-# === 11-20: try-except ===
+## 2. NameError 🔍
 
-# 11. Corregir errores en try
+* **Creación del error**
+
+  ```python
+  # print(mensaje)      # 'mensaje' no está definido aún
+  ```
+
+* **Corrección**
+
+  ```python
+  mensaje = "¡Hola, programador!"
+  print(mensaje)       # Ahora sí funciona ✔️
+  ```
+
+---
+
+## 3. TypeError 🤔
+
+* **Creación del error**
+
+  ```python
+  # resultado = numero + "texto"   # No puedes sumar int y str
+  ```
+
+* **Corrección**
+
+  ```python
+  def duplicar(x):
+      return x * 2
+
+  print(len(duplicar("hola")))    # Convierte todo en cadena, ¡sin problemas! 🎉
+  ```
+
+---
+
+## 4. ZeroDivisionError ➗
+
+* **Creación del error**
+
+  ```python
+  # valor = 100 / 0   # División por cero → ¡Crash! 💥
+  ```
+
+* **Corrección**
+
+  ```python
+  def calcular_coeficiente(a, b):
+      return a / b   # Asegúrate de que b ≠ 0
+
+  print(calcular_coeficiente(100, 2))  # Salida: 50.0 👍
+  ```
+
+---
+
+## 5. IndexError 📏
+
+* **Creación del error**
+
+  ```python
+  palabras = ["uno", "dos", "tres"]
+  # letra = palabras[1][5]   # Índice fuera de rango
+  ```
+
+* **Corrección**
+
+  ```python
+  colores = ["rojo", "verde", "azul"]
+  print(colores[0])          # "rojo" — índice válido ✔️
+  ```
+
+---
+
+## 6. Try–Except 😎
+
+Para los ejercicios **11–20**, hemos usado bloques `try-except` con excepciones específicas:
+
+```python
 try:
-    x = int(input("Ingresá un número: "))
-    resultado = 100 / x
-    y = resultado + 10
-    print("Programa correcto")
+    # … tu lógica aquí …
+    print("Programa correcto 🎯")
 except ZeroDivisionError:
-    print("No podés dividir por cero.")
+    print("No podés dividir por cero. 🛑")
 except ValueError:
-    print("Ingresaste un valor no numérico.")
-
-# 12. Corregir errores en try
-try:
-    valor = int(input("Ingresá un valor: "))
-    cuadrado = valor ** 2
-    doble = cuadrado * 2
-    print("Programa correcto")
-except ValueError:
-    print("Eso no es un número entero.")
-else:
-    print("Salió todo bien.")
-
-# 13. Corregir errores en try
-try:
-    lista = [1, 2, 3, 4]
-    print(lista.pop(2))
-    elemento = lista[1]
-    print("Programa correcto")
-except Exception:
-    print("Algo salió mal.")
-finally:
-    print("Fin del bloque.")
-
-# 14. Corregir errores en try
-try:
-    datos = {"a": 1, "b": 2}
-    total = datos.get("c", 0) + 10
-    mensaje = str(datos["a"] + 5)
-    print("Programa correcto")
-except KeyError:
-    print("Clave no encontrada.")
-else:
-    print("Todo OK con el diccionario.")
-
-# 15. Corregir errores en try
-try:
-    texto = "5"
-    numero = 3
-    resultado = int(texto) - numero
-    redondeo = round(resultado)
-    print("Programa correcto")
-except TypeError:
-    print("No se puede operar str con int.")
-finally:
-    print("Bloque finalizado.")
-
-# 16. Completar excepts específicos
-try:
-    a = int(input("A: "))
-    b = int(input("B: "))
-    c = [10, 20]
-    resultado = c[a] / b
-    palabra = resultado.upper()
-    print("Programa correcto")
-except ValueError:
-    print("Error de valor")
+    print("Ingresaste un valor no numérico. ❌")
 except IndexError:
-    print("Error de índice")
-except ZeroDivisionError:
-    print("División por cero")
-except AttributeError:
-    print("Error de atributo")
-
-# 17. Completar excepts específicos
-try:
-    persona = {"nombre": "Ana", "edad": "veinte"}
-    edad = int(persona["edad"])
-    altura = persona.get("altura", 1.60)
-    peso = persona.get("peso", 60)
-    edad_total = edad + altura + peso
-    print("Programa correcto")
+    print("Índice fuera de rango. 📋")
 except KeyError as e:
-    print(f"Falta la clave {e}")
-except ValueError:
-    print("Edad inválida")
-except TypeError:
-    print("Tipos incompatibles al sumar")
-
-# 18. Completar excepts específicos
-try:
-    datos = input("Ingresá tres números separados por coma: ")
-    x_str, y_str, z_str = datos.split(",")
-    x = int(x_str)
-    y = int(y_str)
-    z = int(z_str)
-    print("El resultado es", 100 / (x - y))
-    print("Programa correcto")
-except ValueError:
-    print("Error de valor")
-except ZeroDivisionError:
-    print("División por cero")
-
-# 19. Completar excepts específicos
-try:
-    def funcion(z):
-        return z.upper()
-    valor = funcion("hola")
-    print("Programa correcto")
-except TypeError:
-    print("Error en cantidad de argumentos")
+    print(f"Falta la clave {e}. 🔑")
 except AttributeError:
-    print("Objeto no tiene el método upper")
+    print("Objeto sin ese método. 📛")
+finally:
+    print("Fin del bloque. 🏁")
+```
 
-# 20. Completar excepts específicos
-try:
-    datos = ["5", "0"]
-    numero = int(datos[0])
-    divisor = int(datos[1])
-    resultado = numero / divisor
-    print("Programa correcto")
-except IndexError:
-    print("Índice fuera de rango")
-except ValueError:
-    print("Conversión inválida")
-except ZeroDivisionError:
-    print("División por cero")
+Cada ejercicio ajusta estas excepciones al contexto del problema: conversiones, accesos a listas o diccionarios, división, etc.
+
+---
+
+¡Y eso es todo! 🌟 Gracias por revisar estos ejemplos y ¡feliz codificación! 🚀
+
